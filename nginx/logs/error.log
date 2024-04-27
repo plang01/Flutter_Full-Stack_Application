@@ -1,0 +1,25 @@
+2024/04/25 12:53:30 [emerg] 34148#44212: unknown directive "proxy_pass:" in C:\nginx/conf/nginx.conf:124
+2024/04/25 12:55:48 [emerg] 22344#20928: unknown directive "proxy_pass:" in C:\nginx/conf/nginx.conf:124
+2024/04/25 12:56:07 [emerg] 19960#28980: unknown directive "proxy_pass:" in C:\nginx/conf/nginx.conf:124
+2024/04/25 12:56:36 [emerg] 30672#26124: unknown directive "proxy_pass:" in C:\nginx/conf/nginx.conf:124
+2024/04/25 12:56:42 [emerg] 41532#39816: unknown directive "proxy_pass:" in C:\nginx/conf/nginx.conf:124
+2024/04/25 12:57:00 [emerg] 35292#13900: unknown directive "proxy_pass:" in C:\nginx/conf/nginx.conf:124
+2024/04/25 12:57:26 [emerg] 35404#24900: unknown directive "proxy_pass:" in C:\nginx/conf/nginx.conf:124
+2024/04/25 12:57:56 [emerg] 15496#38624: unknown directive "proxy_pass:" in C:\nginx/conf/nginx.conf:124
+2024/04/25 12:58:31 [emerg] 31456#39424: unknown directive "proxy_pass:" in C:\nginx/conf/nginx.conf:124
+2024/04/25 12:58:46 [notice] 18308#1832: signal process started
+2024/04/25 12:58:46 [error] 18308#1832: CreateFile() "C:\nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2024/04/25 12:59:34 [notice] 30020#40392: signal process started
+2024/04/25 12:59:34 [error] 30020#40392: CreateFile() "C:\nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2024/04/25 12:59:42 [notice] 5768#35740: signal process started
+2024/04/25 12:59:42 [error] 5768#35740: CreateFile() "C:\nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2024/04/25 13:00:58 [notice] 38180#30840: signal process started
+2024/04/25 13:01:45 [emerg] 32464#32276: unknown directive "proxy_pass:" in C:\nginx/conf/nginx.conf:125
+2024/04/25 13:02:08 [notice] 33260#3724: signal process started
+2024/04/25 13:02:14 [error] 31376#17924: *4 connect() failed (10061: No connection could be made because the target machine actively refused it) while connecting to upstream, client: 127.0.0.1, server: , request: "GET / HTTP/1.1", upstream: "http://[::1]:3000/accounts", host: "localhost"
+2024/04/25 13:02:16 [error] 31376#17924: *4 connect() failed (10061: No connection could be made because the target machine actively refused it) while connecting to upstream, client: 127.0.0.1, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:3000/accounts", host: "localhost"
+2024/04/25 13:03:25 [notice] 5548#15376: signal process started
+2024/04/25 13:06:17 [notice] 41124#32076: signal process started
+2024/04/25 13:31:24 [notice] 11952#22076: signal process started
+2024/04/25 13:31:58 [notice] 20228#29908: signal process started
+2024/04/25 13:32:49 [notice] 22632#21552: signal process started
