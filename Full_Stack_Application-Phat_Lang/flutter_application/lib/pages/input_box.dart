@@ -1,15 +1,37 @@
+import 'package:amplify_auth_cognito/amplify_auth_cognito.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application/pages/landing_screen.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:amplify_flutter/amplify_flutter.dart';
 
 class TextBox extends StatefulWidget {
   TextBox({super.key});
   @override
-  // State<TextBox> createState() => _TextBoxState();
-State<TextBox> createState() => _TextBoxState();
+  State<TextBox> createState() => _TextBoxState();
 }
 
 class _TextBoxState extends State<TextBox> {
+  Future<void> signoutButton (BuildContext context) async {
+    try {
+      final result = await Amplify.Auth.signOut();
+
+      handleSignoutResult(context, result);
+    } on CognitoFailedSignOut catch (e) {
+      safePrint('Error with signing out: ${e.exception.message}');
+    }
+  }
+
+  Future<void> handleSignoutResult(BuildContext context, SignOutResult result) async {
+    if (result is CognitoCompleteSignOut) {
+      gotoLandingScreen(context);
+    }
+  }
+
+  void gotoLandingScreen(BuildContext context) {
+    Navigator.push(context, MaterialPageRoute(builder: (_) => LandingPage()));
+  }
+
   @override
   void initState() {
     super.initState();
@@ -19,11 +41,10 @@ class _TextBoxState extends State<TextBox> {
 
   TextEditingController inputName = TextEditingController();
   String result = '';
-  String url = 'localhost:80';
+  String url = 'localhost:3000';
   List<String> nameList = [];
-  // final String apiUrl = 'https://jsonplaceholder.typicode.com/posts';
   
-  // Create a Widget to style the display of the format
+  // Create a custom widget to display the name the card
   Widget nameTemplate(name) {
     return Card(
       margin: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
@@ -35,11 +56,11 @@ class _TextBoxState extends State<TextBox> {
             Text(
               name,
               textAlign: TextAlign.center,
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.blue,
               ),
             ),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
           ],
         ),
       ),
@@ -57,8 +78,6 @@ class _TextBoxState extends State<TextBox> {
       nameList = [];
       final response = await http.get(Uri.http(url, '/accounts'));
       if (response.statusCode == 200) {
-        // final data = jsonDecode(response.body);
-        // debugPrint(data.toString());
         final data = jsonDecode((response.body));
         setState(() {
           for( var item in data) {
@@ -105,8 +124,17 @@ class _TextBoxState extends State<TextBox> {
     
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Heading'),
+          title: const Text('Home Page'),
           backgroundColor: Colors.blue,
+          actions: [
+            IconButton(
+              onPressed: () {
+                signoutButton(context);
+              },
+              icon: Icon(Icons.logout),
+              tooltip: 'Log Out',
+            ),
+          ],
         ),
         body: Column(
           children: <Widget>[

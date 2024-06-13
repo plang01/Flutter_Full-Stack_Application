@@ -1,0 +1,21 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-cognitomanual2-dev-23e7d-authRole",
+      "UnauthRoleArn": "arn:aws:iam::058264197440:role/amplify-cognitomanual2-dev-23e7d-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::058264197440:role/amplify-cognitomanual2-dev-23e7d-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-cognitomanual2-dev-23e7d-deployment",
+      "UnauthRoleName": "amplify-cognitomanual2-dev-23e7d-unauthRole",
+      "StackName": "amplify-cognitomanual2-dev-23e7d",
+      "StackId": "arn:aws:cloudformation:us-east-2:058264197440:stack/amplify-cognitomanual2-dev-23e7d/91ed53b0-0be9-11ef-8d65-025e33340991",
+      "AmplifyAppId": "dtxnwtnf10zf4",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-cognitomanual2-dev-23e7d-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+    },
+    "categories": {
+      "auth": {
+        "cognitomanual24aaedfb9": {}
+      }
+    }
+  }
+}

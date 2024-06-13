@@ -23,3 +23,11 @@
 2024/04/25 13:31:24 [notice] 11952#22076: signal process started
 2024/04/25 13:31:58 [notice] 20228#29908: signal process started
 2024/04/25 13:32:49 [notice] 22632#21552: signal process started
+2024/05/10 08:39:51 [emerg] 79284#13220: unknown directive "listen:" in C:\Users\PhatLang\Documents\Imago_Projects\Full_Stack_Application-Phat_Lang\nginx/conf/nginx.conf:134
+2024/05/10 08:40:19 [emerg] 71080#100792: CreateDirectory() "C:\Users\PhatLang\Documents\Imago_Projects\Full_Stack_Application-Phat_Lang\nginx/temp/client_body_temp" failed (3: The system cannot find the path specified)
+2024/05/10 08:41:09 [emerg] 16060#42956: CreateDirectory() "C:\Users\PhatLang\Documents\Imago_Projects\Full_Stack_Application-Phat_Lang\nginx/temp/client_body_temp" failed (3: The system cannot find the path specified)
+2024/05/10 08:41:30 [emerg] 99132#98032: CreateDirectory() "C:\Users\PhatLang\Documents\Imago_Projects\Full_Stack_Application-Phat_Lang\nginx/temp/client_body_temp" failed (3: The system cannot find the path specified)
+2024/05/10 08:42:56 [emerg] 90080#35804: CreateDirectory() "C:\Users\PhatLang\Documents\Imago_Projects\Full_Stack_Application-Phat_Lang\nginx/temp/client_body_temp" failed (3: The system cannot find the path specified)
+2024/05/10 08:45:22 [emerg] 90484#64212: CreateDirectory() "C:\Users\PhatLang\Documents\Imago_Projects\Full_Stack_Application-Phat_Lang\nginx/temp/client_body_temp" failed (3: The system cannot find the path specified)
+2024/05/10 08:46:29 [emerg] 100568#69720: CreateDirectory() "C:\Users\PhatLang\Documents\Imago_Projects\Full_Stack_Application-Phat_Lang\nginx/temp/client_body_temp" failed (3: The system cannot find the path specified)
+2024/05/10 08:47:26 [emerg] 99040#90152: CreateDirectory() "C:\Users\PhatLang\Documents\Imago_Projects\Full_Stack_Application-Phat_Lang\nginx/temp/client_body_temp" failed (3: The system cannot find the path specified)
