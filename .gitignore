@@ -6,6 +6,10 @@
 # Node artifact files
 node_modules/
 dist/
+C:\Users\PhatLang\Documents\Imago_Projects\Email_Python_Script-Phat_Lang\imago_account_credentials.json
+C:\Users\PhatLang\Documents\Imago_Projects\Email_Python_Script-Phat_Lang\imago_token.json
+C:\Users\PhatLang\Documents\Imago_Projects\Email_Python_Script-Phat_Lang\test_account_credentials.json
+C:\Users\PhatLang\Documents\Imago_Projects\Email_Python_Script-Phat_Lang\token.json
 
 # Compiled Java class files
 *.class
