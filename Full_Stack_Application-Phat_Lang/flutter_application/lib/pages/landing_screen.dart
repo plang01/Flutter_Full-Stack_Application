@@ -1,7 +1,9 @@
+import 'package:amplify_auth_cognito/amplify_auth_cognito.dart';
 import 'package:flutter/material.dart';
 import 'package:amplify_flutter/amplify_flutter.dart';
 import 'package:flutter_application/pages/input_box.dart';
 import 'package:flutter_application/pages/signup_screen.dart';
+import 'package:jwt_decoder/jwt_decoder.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
@@ -58,6 +60,33 @@ class _LandingPageState extends State<LandingPage> {
     print('Next Step ${result.nextStep.signInStep}');
 
     if(result.nextStep.signInStep == AuthSignInStep.done) {
+      AuthUser user = await Amplify.Auth.getCurrentUser();
+      // CognitoAuthSession session = await Amplify.Auth.fetchAuthSession() as CognitoAuthSession;
+      // String idToken = (session as CognitoAuthSession).userPoolTokensResult!.idToken!;
+      // var idToken = session.userPoolTokensResult.value as String;
+
+      // Map<String, dynamic> decodedToken = JwtDecoder.decode(idToken);
+      // List<dynamic> groups = decodedToken['cognito:groups'];
+
+     var u = await Amplify.Auth.fetchAuthSession() as CognitoAuthSession;
+     var idToken = u.userPoolTokensResult.value;
+     var stringToken = idToken.idToken.groups;
+     // Map<String, dynamic> decodedToken = JwtDecoder.decode(u.userPoolTokensResult);
+       // options: CognitoSessionOptions(getAWSCredentials: true),
+     print(stringToken);
+
+
+
+      // if (groups.contains('admin')) {
+      //   print('Wow');
+      // }
+      // else if (groups.contains('client')) {
+      //   print('Wow Indeed');
+      // }
+      // else {
+      //   print('Bruh');
+      // }
+
       gotoHomeScreen(context);
     }
   }
