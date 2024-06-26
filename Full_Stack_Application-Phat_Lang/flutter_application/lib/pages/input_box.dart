@@ -41,7 +41,8 @@ class _TextBoxState extends State<TextBox> {
 
   TextEditingController inputName = TextEditingController();
   String result = '';
-  String url = 'localhost:3000';
+  // String url = 'localhost:3000';
+  String apiUrl = '34.227.102.242:3000';
   List<String> nameList = [];
   
   // Create a custom widget to display the name the card
@@ -76,7 +77,7 @@ class _TextBoxState extends State<TextBox> {
     //GET request function 
     Future<void> getRequest() async {
       nameList = [];
-      final response = await http.get(Uri.http(url, '/accounts'));
+      final response = await http.get(Uri.http(apiUrl, '/accounts'));
       if (response.statusCode == 200) {
         final data = jsonDecode((response.body));
         setState(() {
@@ -97,7 +98,7 @@ class _TextBoxState extends State<TextBox> {
     String input = inputName.text;
     try{
       final response = await http.post(
-          Uri.http(url, '/accounts'),
+          Uri.http(apiUrl, '/accounts'),
           body : {'username': input},
         );
       if (response.statusCode == 201 || response.statusCode == 200) {

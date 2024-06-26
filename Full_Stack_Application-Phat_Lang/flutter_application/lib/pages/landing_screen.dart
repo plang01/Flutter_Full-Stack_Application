@@ -33,8 +33,12 @@ class _LandingPageState extends State<LandingPage> {
     print('Password: $password');
 
     // User still signed in if the application is refresh, therefore call signOut before attempting to sign in
+    //TODO: Find a way to check if the user is still signed in before calling signOut. Calling signOut without a user results in bad Request
     try {
-      await Amplify.Auth.signOut();
+      final res = await Amplify.Auth.fetchAuthSession();
+      if(res.isSignedIn) {
+        await Amplify.Auth.signOut();
+      }
     } on AuthException catch (e) {
       print('Error Signing Out');
     }
@@ -112,7 +116,7 @@ class _LandingPageState extends State<LandingPage> {
             children: [
               TextFormField(
                 keyboardType: TextInputType.emailAddress,
-                decoration: InputDecoration(labelText: 'Username'),
+                decoration: InputDecoration(labelText: 'Email'),
                 controller: usernameController,
               ),
               TextFormField(
