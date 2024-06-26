@@ -1,7 +1,8 @@
 const express = require('express')
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const {connectToDb, getDb} = require('./db');
+// const {connectToDb, getDb} = require('./db');
+const {connectToDb, getDb} = require('./db_atlas');
 const { ObjectId } = require('mongodb');
 
 const app = express()
@@ -22,8 +23,8 @@ app.use(bodyParser.json());
 let db
 connectToDb((err) => {
     if (!err) {
-        app.listen(port, () => {
-            console.log(`Server running at http://localhost:${port}`)
+        app.listen(port, '0.0.0.0', () => {
+            console.log(`Server running at http://54.209.240.72:${port}`)
            })
         db = getDb()
     }
