@@ -1,5 +1,6 @@
 import 'package:amplify_auth_cognito/amplify_auth_cognito.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application/pages/calendar_screen.dart';
 import 'package:flutter_application/pages/landing_screen.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -127,6 +128,12 @@ class _TextBoxState extends State<TextBox> {
           title: const Text('Home Page'),
           backgroundColor: Colors.blue,
           actions: [
+            IconButton(
+              icon: Icon(Icons.calendar_month),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (_) => CalendarScreen()));
+              },
+            ),
             IconButton(
               onPressed: () {
                 signoutButton(context);

@@ -50,6 +50,11 @@ class _LandingPageState extends State<LandingPage> {
     }
   }
 
+  void initState() {
+    usernameController.text = 'plang1286@gmail.com';
+    passwordController.text = 'Plang-128612';
+  }
+
   void signupButton() {
     Navigator.push(context, MaterialPageRoute(builder: (_) => SignupScreen()));
   }
